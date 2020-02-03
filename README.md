@@ -8,4 +8,4 @@ Please follow what it is said or use them at your own risk. So I put a GNU GPL v
 
 GNU GPL v3.0
 
-![Wolf of Wallstreet](https://media.giphy.com/media/n5sdh00OGVpgA/giphy.gif)
+![[Wolf of Wallstreet](https://media.giphy.com/media/n5sdh00OGVpgA/giphy.gif)](https://media.giphy.com/media/n5sdh00OGVpgA/giphy.gif)

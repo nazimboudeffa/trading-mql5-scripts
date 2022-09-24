@@ -1,4 +1,4 @@
-# METATRADER
+# MQL5 Scripts
 
 This is some scripts am learning from the excellent YouTube channel [MQL5 Tutorials](https://www.youtube.com/channel/UCokIBdJXNOSOeYkKDvENWYA)
 

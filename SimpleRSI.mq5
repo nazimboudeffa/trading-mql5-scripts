@@ -1,10 +1,10 @@
 //+------------------------------------------------------------------+
-//|                                                    SimpleRSI.mq5 |
-//|                                                   Nazim Boudeffa |
-//|                             https://www.github.com/nazimboudeffa |
+//|                                                  SimpleRSIEA.mq5 |
+//|                                  Copyright 2022, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
 //+------------------------------------------------------------------+
-#property copyright "Nazim Boudeffa"
-#property link      "https://www.github.com/nazimboudeffa"
+#property copyright "Copyright 2022, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
 #property version   "1.00"
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |

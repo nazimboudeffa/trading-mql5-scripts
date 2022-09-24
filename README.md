@@ -6,6 +6,6 @@ Please follow what it is said or use them at your own risk. So I put a GNU GPL v
 
 ## LICENCE
 
-GNU GPL v3.0
+GNU GPL v3.0 with absolutely no warranties
 
 [![Wolf of Wallstreet](https://media.giphy.com/media/n5sdh00OGVpgA/giphy.gif)](https://media.giphy.com/media/n5sdh00OGVpgA/giphy.gif)

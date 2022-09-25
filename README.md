@@ -1,6 +1,9 @@
 # MQL5 Scripts
 
-This is some scripts am learning from the excellent YouTube channel [MQL5 Tutorials](https://www.youtube.com/channel/UCokIBdJXNOSOeYkKDvENWYA)
+This is some scripts am learning from
+
+- the excellent YouTube channel [MQL5 Tutorials](https://www.youtube.com/channel/UCokIBdJXNOSOeYkKDvENWYA)
+- the book introduction to mql5
 
 Please follow what it is said or use them at your own risk. So I put a GNU GPL v3.0 to make sure that you take it seriously
 

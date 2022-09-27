@@ -2,6 +2,7 @@
 //|                                          SimpleHighestCandle.mq5 |
 //|                                  Copyright 2022, MetaQuotes Ltd. |
 //|                                             https://www.mql5.com |
+//|        ORIGINAL TUTO https://www.youtube.com/watch?v=S7AiX4Qyvws |
 //+------------------------------------------------------------------+
 #property copyright "Copyright 2022, MetaQuotes Ltd."
 #property link      "https://www.mql5.com"

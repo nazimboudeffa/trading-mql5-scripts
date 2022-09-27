@@ -8,6 +8,9 @@
 #property version   "1.00"
 //---
 
+#include<Trade\Trade.mqh>
+CTrade trade;
+
 enum STRATEGY_IN
   {
    ONLY_MA,  	// Only moving averages
@@ -174,16 +177,20 @@ void OnTick()
        
        // Buy Condition:
        if(Buy && PositionSelect(_Symbol)==false)
+       //TODO: Check if we entered in the normal RSI area before buy
          {
           drawVerticalLine("Buy",candle[1].time,clrBlue);
-          BuyAtMarket();
+          //BuyAtMarket();
+          SimpleBuyTrade();
          }
        
        // Sell Condition:
        if(Sell && PositionSelect(_Symbol)==false)
+       //TODO: Check if we entered in the normal RSI area before sell
          {
           drawVerticalLine("Sell",candle[1].time,clrRed);
-          SellAtMarket();
+          //SellAtMarket();
+          SimpleSellTrade();
          } 
          
       }
@@ -380,3 +387,23 @@ bool isNewBar()
 //--- if we passed to this line, then the bar is not new; return false
    return(false);
   }
+  
+void SimpleBuyTrade()
+{
+   double Ask = NormalizeDouble(SymbolInfoDouble(_Symbol, SYMBOL_ASK), _Digits);
+   double Balance = AccountInfoDouble(ACCOUNT_BALANCE);
+   double Equity = AccountInfoDouble(ACCOUNT_EQUITY);
+   
+   if (Equity >= Balance)
+   trade.Buy(0.01, NULL, Ask, 0, (Ask + 100 * _Point), NULL);
+}
+
+void SimpleSellTrade()
+{
+   double Bid = NormalizeDouble(SymbolInfoDouble(_Symbol, SYMBOL_BID), _Digits);
+   double Balance = AccountInfoDouble(ACCOUNT_BALANCE);
+   double Equity = AccountInfoDouble(ACCOUNT_EQUITY);
+   
+   if (Equity >= Balance)
+   trade.Sell(0.01, NULL, Bid, 0, (Bid - 100 * _Point), NULL);
+}

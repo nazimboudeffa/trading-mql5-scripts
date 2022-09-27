@@ -39,7 +39,7 @@ input int rsi_overbought                   = 70;             // Level Overbought
 input int rsi_oversold                     = 30;              // Level Oversold
 
 sinput string s3; //---------------------------
-input int num_lots                         = 0.10;           // Number of lots
+input double num_lots                         = 0.10;           // Number of lots
 input double TK                            = 60;            // Take Profit
 input double SL                            = 30;            // Stop Loss
 

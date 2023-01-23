@@ -1,0 +1,46 @@
+#include <Trade\Trade.mqh>
+
+input int RSI_Period = 14;
+input int RSI_Level = 70;
+input double LotSize = 0.1;
+input double StopLoss = 5;
+input double TakeProfit = 10;
+
+int handle;
+double rsi;
+
+// Initialize the bot
+void OnInit()
+{
+    // Attach the RSI indicator to the chart
+    handle = iRSI(NULL, 0, RSI_Period, PRICE_CLOSE);
+}
+
+// Execute the bot's logic on every tick
+void OnTick()
+{
+    rsi = iRSI(NULL, 0, RSI_Period, PRICE_CLOSE, handle);
+
+    // Check if the RSI is above the overbought level
+    if (rsi > RSI_Level)
+    {
+        // Close any open buy positions
+        while (PositionSelect(Symbol()))
+            if (PositionGetInteger(POSITION_TYPE) == POSITION_TYPE_BUY)
+                OrderClose(PositionGetTicket(), PositionGetDouble(POSITION_VOLUME), Ask, 3);
+
+        // Open a sell position with a stop loss and take profit level
+        OrderSend(Symbol(), OP_SELL, LotSize, Ask, 3, StopLoss, TakeProfit, "RSI Scalping Bot", 0, 0, clrNONE);
+    }
+    // Check if the RSI is below the oversold level
+    else if (rsi < RSI_Level)
+    {
+        // Close any open sell positions
+        while (PositionSelect(Symbol()))
+            if (PositionGetInteger(POSITION_TYPE) == POSITION_TYPE_SELL)
+                OrderClose(PositionGetTicket(), PositionGetDouble(POSITION_VOLUME), Bid, 3);
+
+        // Open a buy position with a stop loss and take profit level
+        OrderSend(Symbol(), OP_BUY, LotSize, Bid, 3, StopLoss, TakeProfit, "RSI Scalping Bot", 0, 0, clrNONE);
+    }
+}
